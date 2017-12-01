@@ -12,12 +12,10 @@ export class HomeComponent implements OnInit {
     constructor(private authenticationService: AuthenticationService) { }
 
     ngOnInit() {
-        // get users from secure api end point
-        // this.authenticationService.getUsers()
-        //     .subscribe(users => {
-        //         this.users = users;
-        //     });
-        this.users = [{ firstName : "NITESH JATAV", lastName: "KM"},{ firstName : "NITESH JATAV", lastName: "KM"}]
+        this.authenticationService.getUsers()
+            .subscribe(users => {
+                this.users = users;
+            });
     }
 
 }
